@@ -73,7 +73,7 @@
 		}
 		
 		public function addFilterDocumentationToEvent($context){
-			if(!in_array('akismet', $context['selected'])) return;
+			if(is_array($context['selected']) && !in_array('akismet', $context['selected'])) return;
 			
 			$context['documentation'][] = new XMLElement('h3', 'Akismet Spam Filtering');
 			
